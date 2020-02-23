@@ -10,11 +10,11 @@
         margin: 0px; /* 邊界外距0px */
         font-family: Microsoft JhengHei;
       }
-      .container {
+      .container_self {
         margin: 0;
         padding: 0;
       }
-      .navbar {
+      .navbar_self {
         margin: 0px;
         display: flex;
         font-weight: bold;
@@ -42,7 +42,6 @@
         padding: 10px;
       }
       .nav-items a:hover {
-        /* background-color: rgb(115, 115, 115); */
         color: black;
       }
       .flex-nav {
@@ -51,17 +50,33 @@
 
       .flex-nav-right {
         display: flex;
-        /* justify-content: right; */
         margin-left: 20% !important;
       }
       .flex-nav-right .btn {
         display: block;
       }
+      .carousel-inner {
+        width: 90% !important;
+        margin: 0 auto;
+      }
     </style>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="navbar">
+    <div class="container_self">
+      <div class="navbar_self">
         <div class="nav-items">
           <img src="img/sign.png" />
           <ul class="flex-nav">
@@ -77,9 +92,60 @@
           <ul class="flex-nav-right">
             <li><a href="">搜尋</a></li>
             <li><a href="">上傳音樂</a></li>
-            <li><button class="btn">註冊/登入</button></li>
+            <li><button class="btn btn-danger">註冊/登入</button></li>
           </ul>
         </div>
+      </div>
+
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              class="d-block w-100"
+              src="img/poster1.webp"
+              alt="First slide"
+              style="height:400px;"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="img/poster2.webp"
+              alt="Second slide"
+              style="height:400px;"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              class="d-block w-100"
+              src="img/poster3.webp"
+              alt="Third slide"
+              style="height:400px;"
+            />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
   </body>
