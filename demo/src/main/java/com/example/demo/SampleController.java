@@ -25,6 +25,11 @@ public class SampleController {
         model.addAttribute("name", name); //讓HTML中的Thymeleaf語法{name}取得屬性值
         return "hello"; //!!請自行修正：剛才建立的HTML檔案名稱
     }
+	@RequestMapping("/index") //對應的網址
+    public String index(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name); //讓HTML中的Thymeleaf語法{name}取得屬性值
+        return "index"; //!!請自行修正：剛才建立的HTML檔案名稱
+    }
 
 }
 
