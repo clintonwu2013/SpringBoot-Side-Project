@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0px; /* 邊界外距0px */
+        font-family: Microsoft JhengHei;
+      }
+      .container {
+        margin: 0;
+        padding: 0;
+      }
+      .navbar {
+        margin: 0px;
+        display: flex;
+        font-weight: bold;
+      }
+
+      .nav-items {
+        margin: 0 auto;
+        width: 70%;
+        display: flex;
+        /* justify-content: left; */
+        align-items: center;
+      }
+      .nav-items > ul {
+        /* background-color: rgb(230, 230, 230); */
+        list-style: none; /* 移除項目符號 */
+        margin: 0;
+        padding: 0;
+      }
+      .nav-items a {
+        color: rgba(0, 0, 0, 0.6); /* 移除超連結顏色 */
+        font-size: 1.2rem;
+        text-decoration: none; /* 移除超連結底線 */
+
+        display: block; /* 讓 <a> 填滿 <li> */
+        padding: 10px;
+      }
+      .nav-items a:hover {
+        /* background-color: rgb(115, 115, 115); */
+        color: black;
+      }
+      .flex-nav {
+        display: flex;
+      }
+
+      .flex-nav-right {
+        display: flex;
+        /* justify-content: right; */
+        margin-left: 20% !important;
+      }
+      .flex-nav-right .btn {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <div class="nav-items">
+          <img src="img/sign.png" />
+          <ul class="flex-nav">
+            <li><a href="">發現</a></li>
+            <li><a href="">排行榜</a></li>
+            <li><a href="">歌單</a></li>
+            <li><a href="">徵選</a></li>
+            <li><a href="">演出活動</a></li>
+            <li><a href="">派歌</a></li>
+            <li><a href="">吹音樂</a></li>
+          </ul>
+
+          <ul class="flex-nav-right">
+            <li><a href="">搜尋</a></li>
+            <li><a href="">上傳音樂</a></li>
+            <li><button class="btn">註冊/登入</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
