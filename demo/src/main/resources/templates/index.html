@@ -59,6 +59,33 @@
         width: 90% !important;
         margin: 0 auto;
       }
+      
+      .nav2 > ul {
+        /* background-color: rgb(230, 230, 230); */
+        list-style: none; /* 移除項目符號 */
+        margin: 0;
+        padding: 0;
+      }
+      .nav2 a {
+        color: rgba(0, 0, 0, 0.6); 
+        font-size: 1.2rem;
+        text-decoration: none; /* 移除超連結底線 */
+
+        display: block; /* 讓 <a> 填滿 <li> */
+        padding: 10px;
+        text-align: center;
+      }
+      .mobile-items {
+      	display: flex;
+      	margin: 0 auto;
+      	width:90%;
+      }
+      .mobile-items > ul {
+        /* background-color: rgb(230, 230, 230); */
+        list-style: none; /* 移除項目符號 */
+        margin: 0;
+        padding: 0;
+      }
     </style>
     <link
       rel="stylesheet"
@@ -74,10 +101,42 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   </head>
-  <body>
+  <script>
+  
+  $(function(){
+	  rwd();
+	});
+  var a = 0;
+  
+  function show() {
+    if (a == 0) {
+      document.getElementById("nav2").style.display = "block";
+      a = 1;
+    } else {
+      document.getElementById("nav2").style.display = "none";
+      a = 0;
+    }
+  }
+  
+  function rwd() {
+	  var h = window.innerHeight;
+	  var w = window.innerWidth;
+	  console.log("h / w =" + h / w)
+	  if (h / w < 1) {
+	    document.getElementById("desktop").style.display = "flex";
+	    document.getElementById("mobile").style.display = "none";
+	    document.getElementById("nav2").style.display = "none";
+	  } else {
+	    document.getElementById("mobile").style.display = "flex";
+	    document.getElementById("desktop").style.display = "none";
+	  }
+	}
+  
+  </script>
+  <body onresize="rwd()">
     <div class="container_self">
       <div class="navbar_self">
-        <div class="nav-items">
+        <div class="nav-items" id="desktop">
           <img src="/img/sign.png" />
           <ul class="flex-nav">
             <li><a href="">發現</a></li>
@@ -95,6 +154,32 @@
             <li><button class="btn btn-danger">註冊/登入</button></li>
           </ul>
         </div>
+        
+        <div id="mobile" class="mobile">
+        	<div class="mobile-items">
+        		<img src="/img/sign.png" />
+    			<ul>
+      				<li onclick="show()" >
+        				<img src="/img/block.png" />
+      				</li>
+    			</ul>
+        	</div>
+    	</div>
+    	
+    	<div id="nav2" class="nav2" style="display: none;">
+      		<ul>
+        		<li><a href="">發現</a></li>
+            	<li><a href="">排行榜</a></li>
+            	<li><a href="">歌單</a></li>
+            	<li><a href="">徵選</a></li>
+            	<li><a href="">演出活動</a></li>
+            	<li><a href="">派歌</a></li>
+            	<li><a href="">吹音樂</a></li>
+            	<li><a href="">搜尋</a></li>
+            	<li><a href="">上傳音樂</a></li>
+            	<li><a href="">註冊/登入</a></li>
+      		</ul>
+    	</div>
       </div>
 
       <div
